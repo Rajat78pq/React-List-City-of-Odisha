@@ -3,9 +3,9 @@ import { useState } from "react";
 interface props {
     items: string[];
     heading: string;
-    onSelectItems : (item: string)=> void ;
+    onSelectItems: (item: string) => void;
 }
-function ListGroup({ items, heading, onSelectItems}: props) {
+function ListGroup({ items, heading, onSelectItems }: props) {
 
 
 
@@ -16,7 +16,7 @@ function ListGroup({ items, heading, onSelectItems}: props) {
             <h1>{heading}</h1>
             {message}
             <ul className="list-group">
-                {items.map((items, index) => (<li className={selectedIndex === index ? "list-group-item active" : "list-group-item"} onClick={() =>{ setSelectIndex(index); onSelectItems(items)}} key={items}>{items}</li>))}
+                {items.map((items, index) => (<li className={selectedIndex === index ? "list-group-item active" : "list-group-item"} onClick={() => { setSelectIndex(index); onSelectItems(items) }} key={items}>{items}</li>))}
             </ul>
         </>
     );
